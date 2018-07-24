@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Radium from 'radium';
+// import Radium, {StyleRoot} from 'radium';
 import Person from './Person/Person';
 import Person1 from './Person1/Person1';
 
@@ -63,10 +63,10 @@ class App extends Component {
       border: '1px solid blue',
       padding: '8px',
       cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
+      // ':hover': {
+      //   backgroundColor: 'lightgreen',
+      //   color: 'black'
+      // }
     };
 
     let persons = null;
@@ -87,10 +87,10 @@ class App extends Component {
         </div>
       );
       style.backgroundColor = 'red'
-      style[':hover'] = {
-        backgroundColor: 'salmon',
-        color: 'black'
-      };
+      // style[':hover'] = {
+      //   backgroundColor: 'salmon',
+      //   color: 'black'
+      // };
     }
 
     let classes = [];
@@ -102,6 +102,7 @@ class App extends Component {
     }
 
     return (
+      // <StyleRoot>
       <div className="App">
       <h1>Hi, this is my project</h1>
       <p className={classes.join(' ')}> I m a React Developer </p>
@@ -113,9 +114,10 @@ class App extends Component {
       {/* <Person name = "Manu" age = "22">My Hobbies: Racing</Person> */} 
       {persons}
         </div>
+        /* </StyleRoot> */
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1',null,'Does this work now'));
   }
 }
 
-export default Radium(App);
+export default App;
